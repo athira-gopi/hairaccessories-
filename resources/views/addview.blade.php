@@ -17,7 +17,7 @@
 
 <div class="col col-12 col-sm-4 col-md-4 col-lg-4" >
 
-<button class="button btn btn-primary"  href="/addproducts" > Add Products </button> 
+<a class="button btn btn-primary"  href="/addproducts" > Add Products </a> 
 
 
 <br>
