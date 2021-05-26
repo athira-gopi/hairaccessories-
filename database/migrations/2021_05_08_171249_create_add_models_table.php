@@ -18,7 +18,6 @@ class CreateAddModelsTable extends Migration
             $table->id();
             $table->string('pname');
             $table->string('pdes');
-            $table->string('qty');
             $table->string('price');
             $table->mediumText('image')->nullable();
             $table->timestamps();

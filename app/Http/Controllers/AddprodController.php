@@ -59,7 +59,6 @@ class AddprodController extends Controller
     {
         $getpname=request('pname');
         $getpdes=request('pdes');
-        $getqty=request('qty');
         $getprice=request('price');
         $getimage=$request->file('image');
         $name=$getimage->getClientOriginalName();
@@ -69,7 +68,6 @@ class AddprodController extends Controller
         $add=new AddModel();
         $add->pname=$getpname;
         $add->pdes=$getpdes;
-        $add->qty=$getqty;
         $add->price=$getprice;
         $add->image=$name;
         $add->save();
