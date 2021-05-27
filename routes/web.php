@@ -101,6 +101,6 @@ Route::get('/order', function(){return view('order');});
 Route::get('/addpview', function(){return view('addpview');});
 Route::get('/deleteview', function(){return view('deleteview');});  */
 Route::get('/aboutus', function(){return view('aboutus');});
-
+Route::get('/homeadmin', function(){return view('homeadmin');});
 
 
