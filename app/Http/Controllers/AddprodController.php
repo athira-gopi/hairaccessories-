@@ -73,7 +73,7 @@ class AddprodController extends Controller
         $add->save();
 
 
-       return redirect('/homeadmin');
+       return redirect('/addview');
       
     }
 
