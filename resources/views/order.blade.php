@@ -87,7 +87,7 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"onlineStore","qid":"1","text":"Onli
 }
 
 .navbar-nav{
-    padding-left :100px;
+    padding-left :300px;
 }
 
 .nav-item {
@@ -113,6 +113,8 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"onlineStore","qid":"1","text":"Onli
 
 </head>
 <body >
+
+
 
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
   <div class="container-fluid">
@@ -155,14 +157,21 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"onlineStore","qid":"1","text":"Onli
       
           </ul>
         </li>
+        <!--
         
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="d-flex" method="post" action="/psearch">
+               {{csrf_field() }}
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="pname">
         <button class="btn btn-outline-success" style="color:#ffc000;font-size:20px;" type="submit">Search</button>
       </form>
+      -->
+
     </div>
   </div>
 </nav>
+
+
+
 <br>
 <div>
 <table class="table table-striped">
@@ -222,8 +231,8 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"onlineStore","qid":"1","text":"Onli
         <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
           <span class="form-address-line form-address-street-line jsTest-address-lineField">
             <span class="form-sub-label-container" style="vertical-align:top">
-              <input type="text" id="input_4_addr_line1" name="address" class="form-textbox form-address-line" value="" data-component="address_line_1" aria-labelledby="label_4 sublabel_4_addr_line1" required="">
-            
+              <input type="text" id="input_4_addr_line1" name="address" class="form-textbox form-address-line" value="" data-component="address_line_1" aria-labelledby="label_4 sublabel_4_addr_line1" required>
+              
             </span>
           </span>
         </div>

@@ -344,13 +344,13 @@ a {
 
 
 
-<!--
+
   <div class="text-block">
     <h1><i>Live bold. Feel beautiful. Look great.</i></h1>
   </div>
 </div>
 
--->
+
 
 </body>
 </html>

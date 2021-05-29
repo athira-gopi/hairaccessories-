@@ -34,7 +34,7 @@
 <br>
 <div  class="col col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
 <br><br>
-<h5>{{$item->price}}</h5>
+<h5>₹{{$item->price}}</h5>
 </div>
 <div  class="col col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
 <br><br>

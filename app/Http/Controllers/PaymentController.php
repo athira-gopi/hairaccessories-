@@ -75,13 +75,8 @@ class PaymentController extends Controller
 
         $pay->save();
 
-
-
-        return redirect('/thanku'); 
-
-
-
-
+        return redirect('/thanku');
+        
     }
 
 

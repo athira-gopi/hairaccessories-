@@ -1,14 +1,6 @@
 @extends("admintheme")
 @section("content")
 
-<style>
-.button{
-
-    padding-left :30px;
-}
-
-</style>
-
 
 <div class="container">
 <br>
@@ -17,11 +9,11 @@
 
 <div class="col col-12 col-sm-4 col-md-4 col-lg-4" >
 
+
 <a class="button btn btn-primary"  href="/addproducts" > Add Products </a> 
 
 
-<br>
-<br>
+<br><br>
 </div>
 
 
@@ -45,7 +37,7 @@
     
     <td>{{$add->pdes}}</td>
     
-    <td>{{$add->price}}</td>
+    <td>₹{{$add->price}}</td>
 
     <td>{{$add->image}}</td>
 

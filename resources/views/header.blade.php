@@ -23,7 +23,7 @@
 }
 
 .navbar-nav{
-    padding-left :100px;
+    padding-left :300px;
 }
 
 .nav-item {
@@ -85,12 +85,15 @@
       
           </ul>
         </li>
+        <!--
         
         <form class="d-flex" method="post" action="/psearch">
                {{csrf_field() }}
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="pname">
         <button class="btn btn-outline-success" style="color:#ffc000;font-size:20px;" type="submit">Search</button>
       </form>
+      -->
+
     </div>
   </div>
 </nav>

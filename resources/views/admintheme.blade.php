@@ -54,7 +54,7 @@
 }
 
 .navbar-nav{
-    padding-left :550px;
+    padding-left :300px;
 }
 
 .nav-item {

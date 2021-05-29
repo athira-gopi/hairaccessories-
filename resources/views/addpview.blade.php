@@ -7,10 +7,10 @@
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="discount3.png" height='400px' width='250px' class="d-block w-100" alt="...">
+      <img src="discount3.png" height="400px" width="250px" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="0001.jpg" height='400px' width='250px' class="d-block w-100" alt="...">
+      <img src="0001.jpg" height="400px" width="250px" class="d-block w-100" alt="...">
     </div>
    
   </div>
@@ -23,6 +23,10 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
+
+
+
 
 
 @if(Session::get('success'))
