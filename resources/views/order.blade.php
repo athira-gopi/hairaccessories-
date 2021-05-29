@@ -23,7 +23,7 @@
 <link rel="canonical" href="https://form.jotform.com/211341420107437">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1">
 <meta name="HandheldFriendly" content="true">
-<title>Online Store</title>
+
 <link type="text/css" media="print" rel="stylesheet" href="https://cdn.jotfor.ms/css/printForm.css?3.3.25409">
 <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?themeRevisionID=5eb3b4ae85bd2e1e2966db96">
 <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/payment/payment_styles.css?3.3.25409">
@@ -118,7 +118,7 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"onlineStore","qid":"1","text":"Onli
 
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" style="color:#ffc000;" href="#">Classy Missy</a>
+    <a class="navbar-brand" style="color:#ffc000;" >Classy Missy</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -231,7 +231,7 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"onlineStore","qid":"1","text":"Onli
         <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
           <span class="form-address-line form-address-street-line jsTest-address-lineField">
             <span class="form-sub-label-container" style="vertical-align:top">
-              <input type="text" id="input_4_addr_line1" name="address" class="form-textbox form-address-line" value="" data-component="address_line_1" aria-labelledby="label_4 sublabel_4_addr_line1" required>
+              <input type="text" id="address" name="address" class="form-textbox form-address-line" value="" data-component="address_line_1" aria-labelledby="label_4 sublabel_4_addr_line1" required>
               
             </span>
           </span>

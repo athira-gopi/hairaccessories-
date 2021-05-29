@@ -220,7 +220,7 @@ h2::after {
 						<h4>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{$user->pname}}</h4>
 						
 						
-                  <h4>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike>₹595</strike> <span> ₹{{$user->price}}</span></h4>
+                  <h4>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strike><small>₹595</small></strike> <span> ₹{{$user->price}}</span></h4>
 				  <br><br><br><br><br><br>
 				  </div>						
 							</div>
