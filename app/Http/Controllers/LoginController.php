@@ -101,13 +101,13 @@ class LoginController extends Controller
 
         if(count($data))
         {
-            echo "You logged in successfully";
+            
             return redirect('/addview');
         }
         else
         {
     
-            echo "Invalid Username or Password";
+            return back()->with('fail','Error: Invalid Login');
             
         }
 
