@@ -25,7 +25,7 @@
     <th scope="row"></th>
 	<th scope="row">name</th>
     <th scope="row">price</th>
-    <th scope="row">Qty</th>
+    <!-- <th scope="row">Qty</th> -->
     <th></th>
 
     </tr>
@@ -39,7 +39,7 @@
     <td>{{$item->pname}}</td>
     
     <td>₹{{$item->price}}</td>
-	<td>{{$item->qty}}</td>
+	<!-- <td>{{$item->qty}}</td> -->
     <th>  <a class="btn btn-danger" href="/removecart/{{$item->cart_id}}" > Remove </a>  </th>
 
 </tr>
