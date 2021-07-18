@@ -546,7 +546,7 @@ hr {
                     <div class="contact-section">
                         <div class="contact-icon"><i class="fa fa-map-marker"></i></div>
                         <div class="contact-info">
-                            <p>951 Meadow View Drive Bristol, Hog Camp Road USA06010</p>
+                            <p>951 Meadow View Drive Bristol, MG Road Ernakulam</p>
                         </div>
                     </div>
                      <div class="contact-section">

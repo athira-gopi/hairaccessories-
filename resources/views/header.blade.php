@@ -34,9 +34,23 @@
     font-size : 35px;
 }
 
-.div1 {
+/* .div1 {
         background-color: #EBEBEB;
-    }
+    }*/
+    body{
+    //margin: 0;
+    background-image: url('image.jpg');
+    height: 100%;
+    background-size: cover;
+}
+
+  /*  body, html {
+  height: 100%;
+}*/
+
+* {
+  box-sizing: border-box;
+}
 
 
 </style>
@@ -46,7 +60,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" style="color:#ffc000;" href="#">Classy Missy</a>
+    <a class="navbar-brand" style="color:#ffc000;" href="/addp">Classy Missy</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -100,17 +114,13 @@
 
 
 
-<div class="div1">
+<div class="bg-image"></div>
 
-
-
-
-
+<div class="bg-text">
+@yield('content')
 </div>
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 </html>
-@yield('content')

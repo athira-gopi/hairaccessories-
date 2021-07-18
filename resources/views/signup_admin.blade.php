@@ -295,7 +295,7 @@ a {
 
 
                             <div class="group"> 
-                            <input type="submit" class="button" href="/addproducts" value="Sign In"> </div>
+                            <input type="submit" class="button" href="/addview" value="Sign In"> </div>
                             <div class="hr"></div>
                             <div class="foot"> <a href="/">Not a Admin Sign-In as User</a> </div>
 

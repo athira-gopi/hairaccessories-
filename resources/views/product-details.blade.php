@@ -99,6 +99,8 @@ margin : 100px;
                   <h6> {{$item->pdes}}<h6>
 									<br>
                   <p class="item-price"><strike>₹595</strike> <span> ₹{{$item->price}}</span></p>
+                  
+                
 									<div class="star-rating">
 										<ul class="list-inline">
 											<li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -110,6 +112,7 @@ margin : 100px;
                     </div>
 										<form action="/add_to_cart" method="post">
 										{{csrf_field()}}
+                    <input type="number" id="validationcus" name="qty" size="5" placeholder="QTY" min="1" max="50" default value="1"><br><br>
                     <input type="hidden" name="product_id" value="{{$item->id}}">
                     <center> <button  class="btn btn-primary" type="submit">Add to Cart</button></center>  
                     </form>

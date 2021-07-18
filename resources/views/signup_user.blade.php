@@ -308,7 +308,12 @@ a {
                         
       <form action="/registerread" method="post">
         {{csrf_field()}}
-
+        @if(Session::get('fail'))
+            <div class="alert alert-danger">
+            {{Session::get('fail')}}
+            </div>
+            @endif     
+            
                             <div class="group"> <label for="user" class="label">Name</label> 
                             <input id="user" type="text" name="lname" value="{{old('lname')}}" class="input" placeholder="Enter your Name"> 
                             <span class="text-danger">@error('lname'){{$message}} @enderror  </span>

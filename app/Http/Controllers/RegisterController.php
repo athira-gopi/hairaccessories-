@@ -52,9 +52,9 @@ class RegisterController extends Controller
      */
     public function create()
     {
-        return view('/');
+        return view('signup_user');
     }
-
+   
     /**
      * Store a newly created resource in storage.
      *
@@ -86,10 +86,19 @@ class RegisterController extends Controller
         $register->lname=$getname;
         $register->lemail=$getemail;
         $register->lpass=Hash::make($request->lpass);
-        $register->save();
+        
+        $save=$register->save();
+                if($save)
+                {
+                    return redirect('/addp')->with('success',"successfully registered");
+                }
+                else
+                {
+                    return back()->with('fail',"register failed");
+                }
 
-
-        return redirect('/');
+              //return redirect(/addp);
+        
     }
 
     /**

@@ -48,7 +48,10 @@ class AddprodController extends Controller
     {
         return view('addproducts');
     }
-
+    public function about()
+    {
+        return view('aboutus');
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -80,10 +83,12 @@ class AddprodController extends Controller
 
     public function addToCart(Request $request)
     {
-
+        // echo($request->qty);
+        // return($request->qty);
          $cart=new Cart();
          $cart->user_id=$request->session()->get('loggeduser');
          $cart->product_id=$request->product_id;
+         $cart->qty=$request->qty;
             $cart->save();
             if($cart)
             {
@@ -107,11 +112,10 @@ public function cartlist()
 {
     $products=AddModel::all();
     $userId=Session::get('loggeduser');
-    $products= DB::table('cart')
-    ->join('add_models', 'cart.product_id', '=', 'add_models.id')
+    $products=Cart::join('add_models','add_models.id', '=', 'cart.product_id' )
     ->where('cart.user_id', $userId)
     //->select('add_models.*')
-    ->select('add_models.*','cart.id as cart_id')
+    ->select('add_models.*','cart.*','cart.id as cart_id')
     ->get();
      return view('/cartlist', compact('products'));
 }
@@ -121,6 +125,10 @@ public function cartlist()
 
 function orderplace (Request $req)
 {
+        $req->validate([
+        'address'=>'required',
+        'payment'=>'required'
+    ]);
         $userId= Session::get('loggeduser');
         $allCart=Cart::where('user_id', $userId)->get();
         foreach($allCart as $cart)
@@ -132,7 +140,15 @@ function orderplace (Request $req)
         $order->status="pending";
         $order->paymentmethod=$req->payment; 
         $order->paymentstatus="pending";
-        $order->save();
+        $save=$order->save();
+        // if($save)
+        // {
+        //     return back()->with('success',"Payment successfully");
+        // }
+        // else
+        // {
+        //     return back()->with('fail',"Payment failed");
+        // }
     } 
         Cart::where('user_id', $userId)->delete();
         return redirect('/addp')->with ('success','Thankyou for your order!!');
@@ -145,14 +161,15 @@ public function order()
 {
    // $products=AddModel::all();
     $userId=Session::get('loggeduser');
-    $tot= collect(DB::table('cart')
-    ->join('add_models', 'cart.product_id', '=', 'add_models.id')
+    $tot= Cart::join('add_models', 'cart.product_id', '=', 'add_models.id')
     ->where('cart.user_id','=', "$userId")
-    ->sum('add_models.price'));
-   // $stot = $tot->values();
-    //dd($tot);
-    $t = $tot['0']+150;
+    ->sum('add_models.price');
+    
+   //$stot = $tot->values();
+   //dd($tot);
+    $t = $tot+150;
      return view('order', compact('tot','t'));
+    
 }
 
 
@@ -160,9 +177,12 @@ public function order()
 
     public function cancelorder($id,$uid)
     {
+        //echo($id);
+
         DB::table('orders')
         ->where('pid',$id)
         ->where('userid',$uid)
+       // ->where('qty',$qty)
         ->delete();
         return redirect('/myorder');
     
@@ -201,7 +221,7 @@ public function order()
     
     public function vieworders()
     { 
-        $prod=Order::all();
+        $prod=Order::join('cart','cart.user_id','=','orders.userid')->get();
         return view('vieworders',compact('prod'));
 
     }
@@ -212,10 +232,11 @@ public function order()
     {
     
         $userId=Session::get('loggeduser');
-        $orders=DB::table('orders')
-        ->join('add_models', 'orders.pid', '=', 'add_models.id')
+        $orders=Order::join('add_models','add_models.id' , '=', 'orders.pid')
+        //->join('orders','orders.userid','=','cart.user_id')
         ->where('orders.userid', $userId)
-        ->get();
+        //->select('cart.*','orders.id as oid');
+        ->get();    
         return view('myorder', ['orders'=>$orders]);
     }
 
@@ -238,9 +259,10 @@ public function order()
 
     public function removecart($id)
     {
-            cart::destroy($id);
+        
+            Cart::destroy($id);
 
-            return redirect('/cartlist');
+            return back();
     }
 
 

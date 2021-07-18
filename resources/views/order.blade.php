@@ -118,7 +118,7 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"onlineStore","qid":"1","text":"Onli
 
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" style="color:#ffc000;" >Classy Missy</a>
+    <a class="navbar-brand" style="color:#ffc000;"  href='/addp' >Classy Missy</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -179,7 +179,7 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"onlineStore","qid":"1","text":"Onli
     <tbody >
       <tr>
         <td>Amount</td>
-        <td>₹{{$tot[0]}}</td>
+        <td>₹{{$tot}}</td>
       </tr>
       <tr>
         <td>GST</td>
@@ -196,8 +196,20 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"onlineStore","qid":"1","text":"Onli
     </tbody>
   </table>
   <div>
+  @if(Session::get('success'))
+            <div class="alert alert-success">
+            {{Session::get('success')}}
+            </div>
+     @endif
+    @if(Session::get('fail'))
+            <div class="alert alert-danger">
+            {{Session::get('fail')}}
+            </div>
+    @endif
+
   <form action="/orderplace" method="post">
       {{csrf_field()}}
+      
   
   <div class="form-group">
     
@@ -232,7 +244,7 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"onlineStore","qid":"1","text":"Onli
           <span class="form-address-line form-address-street-line jsTest-address-lineField">
             <span class="form-sub-label-container" style="vertical-align:top">
               <input type="text" id="address" name="address" class="form-textbox form-address-line" value="" data-component="address_line_1" aria-labelledby="label_4 sublabel_4_addr_line1" required>
-              
+              <span class="text-danger">@error('address'){{$message}} @enderror  </span>
             </span>
           </span>
         </div>

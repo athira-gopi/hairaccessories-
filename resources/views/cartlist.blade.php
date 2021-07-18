@@ -7,8 +7,7 @@
 <style>
 .container {
 
-	height: 1000px;
-        background-color: #EBEBEB;
+	height: 100%;
     }
 
 </style>
@@ -16,33 +15,38 @@
 <div class="div1">
 
 
-<h6 ><center><font size="15px">My Cart</font></center></h>
+<h6 style="color:white;"><center><font size="9px">My Cart</font></center></h>
  <br>
+
 <div class="container">
 <div class="row ">
+<table class="table table table-dark" >
+<tr>
+    <th scope="row"></th>
+	<th scope="row">name</th>
+    <th scope="row">price</th>
+    <th scope="row">Qty</th>
+    <th></th>
 
-@foreach($products as $item) 
+    </tr>
 
-<div  class="col col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
-<br>
-<img width="200" height="200" src="{{ URL ::asset('assets/product_img/'.$item->image) }}">
-</div>
-<div  class="col col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
-<br><br>
-<h5>{{$item->pname}}</h5> 
-</div>
-<br>
-<div  class="col col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
-<br><br>
-<h5>₹{{$item->price}}</h5>
-</div>
-<div  class="col col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
-<br><br>
-<a href="/removecart/{{$item->cart_id}}" class="btn btn-warning">Remove</a>
-</div>
-<br><br><br><br><br><br><br><br><br>
+	@foreach($products as $item) 
+
+<tr class="table" style="background-color:#F4D03F">
+    
+<td><img src="{{URL::asset('assets/product_img/'.$item->image)}}" width="100px" height="100px" class="img-responsive img-fluid" alt=""></td>
+    
+    <td>{{$item->pname}}</td>
+    
+    <td>₹{{$item->price}}</td>
+	<td>{{$item->qty}}</td>
+    <th>  <a class="btn btn-danger" href="/removecart/{{$item->cart_id}}" > Remove </a>  </th>
+
+</tr>
+
 @endforeach
 
+</table>
 
 </div>
 
