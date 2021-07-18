@@ -159,16 +159,26 @@ function orderplace (Request $req)
 
 public function order()
 {
-   // $products=AddModel::all();
-    $userId=Session::get('loggeduser');
-    $tot= Cart::join('add_models', 'cart.product_id', '=', 'add_models.id')
+ // $products=AddModel::all();
+
+ $userId=Session::get('loggeduser');
+    $tot= collect(DB::table('cart')
+    ->join('add_models', 'cart.product_id', '=', 'add_models.id')
     ->where('cart.user_id','=', "$userId")
-    ->sum('add_models.price');
-    
-   //$stot = $tot->values();
-   //dd($tot);
-    $t = $tot+150;
+    ->sum('add_models.price'));
+
+    $t = $tot['0']+350;
      return view('order', compact('tot','t'));
+
+//     $userId=Session::get('loggeduser');
+//     $tot= Cart::join('add_models', 'cart.product_id', '=', 'add_models.id')
+//     ->where('cart.user_id','=', "$userId")
+//     ->sum('add_models.price');
+    
+//    //$stot = $tot->values();
+//    //dd($tot);
+//     $t = $tot+150;
+//      return view('order', compact('tot','t'));
     
 }
 
@@ -221,8 +231,12 @@ public function order()
     
     public function vieworders()
     { 
-        $prod=Order::join('cart','cart.user_id','=','orders.userid')->get();
-        return view('vieworders',compact('prod'));
+
+        $prod=Order::all();
+     return view('vieworders',compact('prod'));
+
+        // $prod=Order::join('cart','cart.user_id','=','orders.userid')->get();
+        // return view('vieworders',compact('prod'));
 
     }
 
@@ -232,12 +246,20 @@ public function order()
     {
     
         $userId=Session::get('loggeduser');
-        $orders=Order::join('add_models','add_models.id' , '=', 'orders.pid')
-        //->join('orders','orders.userid','=','cart.user_id')
-        ->where('orders.userid', $userId)
-        //->select('cart.*','orders.id as oid');
-        ->get();    
+        $orders=DB::table('orders')
+       ->join('add_models', 'orders.pid', '=', 'add_models.id')
+       ->where('orders.userid', $userId)
+       ->get();
         return view('myorder', ['orders'=>$orders]);
+
+
+        // $userId=Session::get('loggeduser');
+        // $orders=Order::join('add_models','add_models.id' , '=', 'orders.pid')
+        // //->join('orders','orders.userid','=','cart.user_id')
+        // ->where('orders.userid', $userId)
+        // //->select('cart.*','orders.id as oid');
+        // ->get();    
+        // return view('myorder', ['orders'=>$orders]);
     }
 
 
