@@ -179,7 +179,7 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"onlineStore","qid":"1","text":"Onli
     <tbody >
       <tr>
         <td>Amount</td>
-        <td>₹{{$tot['0']}}</td>
+        <td>₹{{$tot[0]}}</td>
       </tr>
       <tr>
         <td>GST</td>
