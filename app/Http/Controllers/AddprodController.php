@@ -88,7 +88,7 @@ class AddprodController extends Controller
          $cart=new Cart();
          $cart->user_id=$request->session()->get('loggeduser');
          $cart->product_id=$request->product_id;
-         $cart->qty=$request->qty;
+         //$cart->qty=$request->qty;
             $cart->save();
             if($cart)
             {
