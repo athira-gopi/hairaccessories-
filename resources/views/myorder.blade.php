@@ -83,7 +83,7 @@
 
 <div  class="col col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
 <br><br>
-<h5 style="color:black;">₹ {{$item->qty}}</h5>
+<h5 style="color:black;"></h5>
 </div>
 <div  class="col col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3" style="color:black;"><br><br>
 Delivery Status : {{$item->status}}
